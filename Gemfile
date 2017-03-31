@@ -25,6 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Authentifications
 gem 'devise'
+gem 'omniauth-slack'
 
 
 # Use ActiveModel has_secure_password
@@ -45,5 +46,8 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+    # Use figaro for setting local env variables
+  gem 'figaro'
 end
 
