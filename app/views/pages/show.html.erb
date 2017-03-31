@@ -1,2 +1,7 @@
 <h1>Slack Team Directory</h1>
-<p>Find me in app/views/pages/show.html.erb</p>
+
+<% if member_signed_in? %>
+  <%= link_to 'Log out', destroy_member_session_path, method: :delete %>
+<% else %>
+  <%= link_to "Log in", new_member_session_url %>
+<% end %>
