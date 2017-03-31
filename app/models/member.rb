@@ -7,6 +7,8 @@ class Member < ActiveRecord::Base
 
 
   def self.from_omniauth(auth)
+    puts auth.provider
+    puts auth.uid
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       puts auth
       user.provider = auth.provider
