@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :members, path_names: {sign_in: "login", sign_out: "logout"}
+  get 'pages/show'
+
+  devise_for :members, path_names: {sign_in: "login", sign_out: "logout"},
+             :controllers => { :omniauth_callbacks => "members/omniauth_callbacks" }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -7,7 +10,7 @@ Rails.application.routes.draw do
   #root to: "devise/sessions#new"
 
   devise_scope :member do
-    root to: "devise/sessions#new"
+    root to: "pages#show"
   end
 
   # Example of regular route:
